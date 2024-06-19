@@ -1,4 +1,41 @@
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: flex-end;
+  background-color: var(--white);
+  padding: 1rem;
+  box-shadow: 0px 2px 15px var(--light-gray);
+
+  @media (min-width: 768px) {
+    position: relative;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  & button {
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    padding: 16px 32px;
+    font-weight: var(--font-medium);
+    border-radius: 10px;
+  }
+}
+
+.go-back-btn {
+  color: var(--cool-gray);
+  margin-right: auto;
+}
+
+.go-next-btn {
+  color: var(--white);
+  background-color: var(--marine-blue);
+}
+
+.confirm-btn {
+  color: var(--white);
+  background-color: var(--purplish-blue);
 }
