@@ -1,0 +1,67 @@
+section {
+  border-radius: 10px;
+  background-color: var(--white);
+  margin-top: 80px;
+  margin-bottom: 80px;
+  box-shadow: 0px 2px 15px var(--light-gray);
+  padding: 1.5rem;
+
+  @media (min-width: 768px) {
+    border-radius: 25px;
+    margin-top: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+h2 {
+  color: var(--marine-blue);
+  margin-block: 0.5rem;
+  font-size: 1.2rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--marine-blue);
+}
+
+.step-description {
+  color: var(--cool-gray);
+}
+
+.personal-info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  & input {
+    font-size: 0.8rem;
+    padding: 1rem;
+    border: 1px solid;
+    border-color: var(--light-gray);
+    border-radius: 5px;
+    max-width: 450px;
+    color: var(--marine-blue);
+    font-weight: var(--font-bold);
+
+    &:focus {
+      outline: none;
+      border: 1px solid var(--purplish-blue);
+    }
+
+    &.invalid {
+      border: 1px solid var(--strawberry-red);
+    }
+  }
+
+  & input::placeholder {
+    color: var(--cool-gray);
+    letter-spacing: 0.5px;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: 2.5rem;
+  }
+}

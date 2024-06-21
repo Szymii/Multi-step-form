@@ -18,7 +18,7 @@ nav {
     z-index: initial;
     height: auto;
     position: relative;
-    border-radius: 25px;
+    border-radius: 10px;
     background-image: url("./src/assets/images/bg-sidebar-desktop.svg");
     padding: 32px;
     flex-direction: column;

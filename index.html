@@ -45,11 +45,58 @@
       </nav>
       <div class="main-wrapper">
         <section>
-          <div style="height: 500px"></div>
+          <h2>Personal info</h2>
+          <p class="step-description">
+            Please provide your name, email address, and phone number.
+          </p>
+          <form class="personal-info-form" id="step-form">
+            <label>
+              <span>Name</span>
+              <input type="text" required placeholder="e.g. Stephen King" />
+            </label>
+            <label>
+              <span>Email Address</span>
+              <input
+                type="email"
+                required
+                placeholder="e.g. stephenking@lorem.com"
+              />
+            </label>
+            <label>
+              <span>Phone Number</span>
+              <input type="text" required placeholder="e.g. +1 234 567 890" />
+            </label>
+          </form>
         </section>
+        <template>
+          <section>
+            <h2>Select your plan</h2>
+            <p class="step-description">
+              You have the option of monthly or yearly billing.
+            </p>
+          </section>
+        </template>
+        <template>
+          <section>
+            <h2>Pick add-ons</h2>
+            <p class="step-description">
+              Add-ons help enhance your gaming experience.
+            </p>
+          </section>
+        </template>
+        <template>
+          <section>
+            <h2>Finishing up</h2>
+            <p class="step-description">
+              Double-check everything looks OK before confirming.
+            </p>
+          </section>
+        </template>
         <footer>
           <!-- <button class="go-back-btn">Go back</button> -->
-          <button class="go-next-btn">Next step</button>
+          <button class="go-next-btn" type="submit" form="step-form">
+            Next step
+          </button>
           <!-- <button class="confirm-btn">Confirm</button> -->
         </footer>
       </div>

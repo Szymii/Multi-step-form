@@ -1,9 +1,6 @@
 @import url("./src/styles/variable.css");
 @import url("./src/styles/navigation.css");
-@import url("./src/styles/stepOne.css");
-@import url("./src/styles/stepTwo.css");
-@import url("./src/styles/stepThree.css");
-@import url("./src/styles/stepFour.css");
+@import url("./src/styles/step.css");
 @import url("./src/styles/footer.css");
 
 * {
@@ -23,7 +20,7 @@ main {
   margin-inline: auto;
 
   @media (min-width: 768px) {
-    border-radius: 25px;
+    border-radius: 15px;
     margin-top: 100px;
     background-color: var(--white);
     display: flex;
@@ -37,18 +34,5 @@ main {
 
   @media (min-width: 768px) {
     padding: 16px 80px;
-  }
-}
-
-section {
-  border-radius: 25px;
-  background-color: var(--white);
-  margin-top: 80px;
-  margin-bottom: 80px;
-  box-shadow: 0px 2px 15px var(--light-gray);
-
-  @media (min-width: 768px) {
-    margin-top: 0;
-    box-shadow: none;
   }
 }
