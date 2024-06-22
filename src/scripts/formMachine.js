@@ -1,11 +1,12 @@
 import { assign, createActor, setup } from "xstate";
-import { Plans } from "./App";
+import { App, Plans } from "./App";
 import {
   loadFirstStep,
   loadSecondStep,
   loadThirdStep,
   loadForthStep,
 } from "./actors";
+import { loadSection } from "./helpers";
 
 export const formMachine = setup({
   actors: {
@@ -89,6 +90,9 @@ export const formMachine = setup({
         },
         "finish.submitted": {
           target: "thanks",
+          actions: () => {
+            loadSection(App.thankYouPage(), "step-four");
+          },
         },
       },
     },

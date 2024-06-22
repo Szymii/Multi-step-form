@@ -21,7 +21,7 @@ section {
 h2 {
   color: var(--marine-blue);
   margin-block: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 label {
@@ -71,5 +71,23 @@ label {
   & input::placeholder {
     color: var(--cool-gray);
     letter-spacing: 0.5px;
+  }
+}
+
+.thanks {
+  align-items: center;
+  justify-content: center;
+  padding-block: 60px;
+  text-align: center;
+  gap: 1.5rem;
+
+  & img {
+    height: 55px;
+    width: 55px;
+
+    @media (min-width: 768px) {
+      height: 85px;
+      width: 85px;
+    }
   }
 }

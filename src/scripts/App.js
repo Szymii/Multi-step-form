@@ -9,6 +9,7 @@
  * @property {Function} selectPlanForm
  * @property {Function} pickAddonsForm
  * @property {Function} finishingUpForm
+ * @property {Function} thankYouPage
  */
 export const App = {
   /**
@@ -55,6 +56,11 @@ export const App = {
    * @returns {HTMLFormElement}
    */
   finishingUpPage: () => document.querySelector("#finishing-up"),
+
+  /**
+   * @returns {HTMLFormElement}
+   */
+  thankYouPage: () => document.querySelector("#thank-you"),
 };
 /**
  * @namespace Plans

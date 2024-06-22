@@ -103,10 +103,14 @@ export const loadForthStep = fromCallback(({ sendBack }) => {
     });
   };
 
+  const confirm = App.confirmBtn();
+  confirm.addEventListener("click", handler);
+
   const goBackBtn = App.goBackBtn();
   goBackBtn.addEventListener("click", goBack);
 
   return () => {
+    confirm.removeEventListener("click", handler);
     goBackBtn.removeEventListener("click", goBack);
   };
 });
