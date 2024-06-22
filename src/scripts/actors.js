@@ -1,12 +1,9 @@
 import { fromCallback } from "xstate";
 import { App } from "./App";
-import { setActiveNavItem } from "./helpers";
+import { loadSection } from "./helpers";
 
 export const loadFirstStep = fromCallback(({ sendBack }) => {
-  const wrapper = App.mainWrapper();
-  const clone = App.personalInfoForm().content.cloneNode(true);
-  wrapper.replaceChildren(clone);
-  setActiveNavItem("step-one");
+  loadSection(App.personalInfoForm(), "step-one");
 
   const handler = (e) => {
     e.preventDefault();
@@ -25,7 +22,7 @@ export const loadFirstStep = fromCallback(({ sendBack }) => {
     });
   };
 
-  const form = wrapper.querySelector("form");
+  const form = App.mainWrapper().querySelector("form");
   form.addEventListener("submit", handler);
 
   return () => {
@@ -34,70 +31,82 @@ export const loadFirstStep = fromCallback(({ sendBack }) => {
 });
 
 export const loadSecondStep = fromCallback(({ sendBack }) => {
-  const wrapper = App.mainWrapper();
-  const clone = App.selectPlanForm().content.cloneNode(true);
-  wrapper.replaceChildren(clone);
-  setActiveNavItem("step-two");
+  loadSection(App.selectPlanForm(), "step-two");
 
-  const handler = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
-    // const formData = new FormData(form);
-    // const formDataObj = {};
-
-    // for (const [key, value] of formData) {
-    //   formDataObj[key] = value;
-    // }
 
     sendBack({
       type: "plan.submitted",
     });
   };
 
-  const form = wrapper.querySelector("form");
-  form.addEventListener("submit", handler);
+  const goBack = (e) => {
+    sendBack({
+      type: "back",
+    });
+  };
+
+  const form = App.mainWrapper().querySelector("form");
+  form.addEventListener("submit", submitForm);
+
+  const goBackBtn = App.goBackBtn();
+  goBackBtn.addEventListener("click", goBack);
 
   return () => {
-    form.removeEventListener("submit", handler);
+    form.removeEventListener("submit", submitForm);
+    goBackBtn.removeEventListener("click", goBack);
   };
 });
 
 export const loadThirdStep = fromCallback(({ sendBack }) => {
-  const wrapper = App.mainWrapper();
-  const clone = App.pickAddonsForm().content.cloneNode(true);
-  wrapper.replaceChildren(clone);
-  setActiveNavItem("step-three");
+  loadSection(App.pickAddonsForm(), "step-three");
 
-  const handler = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
-    // const formData = new FormData(form);
-    // const formDataObj = {};
-
-    // for (const [key, value] of formData) {
-    //   formDataObj[key] = value;
-    // }
 
     sendBack({
       type: "addons.submitted",
     });
   };
 
-  const form = wrapper.querySelector("form");
-  form.addEventListener("submit", handler);
+  const goBack = (e) => {
+    sendBack({
+      type: "back",
+    });
+  };
+
+  const form = App.mainWrapper().querySelector("form");
+  form.addEventListener("submit", submitForm);
+
+  const goBackBtn = App.goBackBtn();
+  goBackBtn.addEventListener("click", goBack);
 
   return () => {
-    form.removeEventListener("submit", handler);
+    form.removeEventListener("submit", submitForm);
+    goBackBtn.removeEventListener("click", goBack);
   };
 });
 
 export const loadForthStep = fromCallback(({ sendBack }) => {
-  const wrapper = App.mainWrapper();
-  const clone = App.finishingUpPage().content.cloneNode(true);
-  wrapper.replaceChildren(clone);
-  setActiveNavItem("step-four");
+  loadSection(App.finishingUpPage(), "step-four");
 
   const handler = (e) => {
     sendBack({
       type: "finish.submitted",
     });
+  };
+
+  const goBack = (e) => {
+    sendBack({
+      type: "back",
+    });
+  };
+
+  const goBackBtn = App.goBackBtn();
+  goBackBtn.addEventListener("click", goBack);
+
+  return () => {
+    goBackBtn.removeEventListener("click", goBack);
   };
 });

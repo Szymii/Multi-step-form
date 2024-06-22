@@ -31,10 +31,14 @@ label {
   color: var(--marine-blue);
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
+  @media (min-width: 768px) {
+    margin-top: 1.5rem;
+  }
 }
 
 .step-description {
@@ -42,8 +46,6 @@ form {
 }
 
 .personal-info-form {
-  display: flex;
-  flex-direction: column;
   gap: 1.2rem;
 
   & input {
@@ -69,9 +71,5 @@ form {
   & input::placeholder {
     color: var(--cool-gray);
     letter-spacing: 0.5px;
-  }
-
-  @media (min-width: 768px) {
-    margin-top: 2.5rem;
   }
 }

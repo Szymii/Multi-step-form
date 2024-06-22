@@ -14,3 +14,14 @@ export const setActiveNavItem = (itemId) => {
 
   navItemForActivation?.classList.add("active");
 };
+
+/**
+ * @param {HTMLElement} template
+ * @param {string} navId
+ */
+export const loadSection = (template, navId) => {
+  const wrapper = App.mainWrapper();
+  const clone = template.content.cloneNode(true);
+  wrapper.replaceChildren(clone);
+  setActiveNavItem(navId);
+};

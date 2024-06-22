@@ -49,6 +49,9 @@ export const formMachine = setup({
         src: "loadSecondStep",
       },
       on: {
+        back: {
+          target: "personalInfo",
+        },
         "plan.submitted": {
           target: "addons",
           // actions: assign({
@@ -64,6 +67,9 @@ export const formMachine = setup({
         src: "loadThirdStep",
       },
       on: {
+        back: {
+          target: "plan",
+        },
         "addons.submitted": {
           target: "finish",
           // actions: assign({
@@ -78,6 +84,9 @@ export const formMachine = setup({
         src: "loadForthStep",
       },
       on: {
+        back: {
+          target: "addons",
+        },
         "finish.submitted": {
           target: "thanks",
         },
