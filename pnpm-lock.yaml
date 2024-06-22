@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  xstate:
+    specifier: ^5.13.2
+    version: 5.13.2
+
 devDependencies:
   vite:
     specifier: ^5.2.0
@@ -473,3 +478,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /xstate@5.13.2:
+    resolution: {integrity: sha512-cFbFJUuK7n8NGe9rsT9G8QjK/8KQO5WaxCkpl1GxnvSDb9oXM/+cbZbEtLT/YaAjDfaGA2nzOKyw5oev2LuNRw==}
+    dev: false

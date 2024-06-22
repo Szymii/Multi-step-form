@@ -14,7 +14,7 @@
   <body>
     <main>
       <nav>
-        <div class="nav-item active">
+        <div class="nav-item">
           <div class="circle">1</div>
           <div class="step">
             <div class="step-number">step 1</div>
@@ -43,32 +43,51 @@
           </div>
         </div>
       </nav>
+
       <div class="main-wrapper">
-        <section>
-          <h2>Personal info</h2>
-          <p class="step-description">
-            Please provide your name, email address, and phone number.
-          </p>
-          <form class="personal-info-form" id="step-form">
-            <label>
-              <span>Name</span>
-              <input type="text" required placeholder="e.g. Stephen King" />
-            </label>
-            <label>
-              <span>Email Address</span>
-              <input
-                type="email"
-                required
-                placeholder="e.g. stephenking@lorem.com"
-              />
-            </label>
-            <label>
-              <span>Phone Number</span>
-              <input type="text" required placeholder="e.g. +1 234 567 890" />
-            </label>
-          </form>
-        </section>
-        <template>
+        <template id="personal-info-form">
+          <section>
+            <h2>Personal info</h2>
+            <p class="step-description">
+              Please provide your name, email address, and phone number.
+            </p>
+            <form class="personal-info-form" id="step-form">
+              <label>
+                <span>Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="e.g. Stephen King"
+                />
+              </label>
+              <label>
+                <span>Email Address</span>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="e.g. stephenking@lorem.com"
+                />
+              </label>
+              <label>
+                <span>Phone Number</span>
+                <input
+                  type="text"
+                  name="phone"
+                  required
+                  placeholder="e.g. +1 234 567 890"
+                />
+              </label>
+              <div class="form-footer">
+                <!-- <button class="go-back-btn">Go back</button> -->
+                <button class="go-next-btn" type="submit">Next step</button>
+                <!-- <button class="confirm-btn">Confirm</button> -->
+              </div>
+            </form>
+          </section>
+        </template>
+        <template id="select-plan-form">
           <section>
             <h2>Select your plan</h2>
             <p class="step-description">
@@ -76,7 +95,7 @@
             </p>
           </section>
         </template>
-        <template>
+        <template id="pick-addons-form">
           <section>
             <h2>Pick add-ons</h2>
             <p class="step-description">
@@ -84,7 +103,7 @@
             </p>
           </section>
         </template>
-        <template>
+        <template id="finishing-up-form">
           <section>
             <h2>Finishing up</h2>
             <p class="step-description">
@@ -92,13 +111,6 @@
             </p>
           </section>
         </template>
-        <footer>
-          <!-- <button class="go-back-btn">Go back</button> -->
-          <button class="go-next-btn" type="submit" form="step-form">
-            Next step
-          </button>
-          <!-- <button class="confirm-btn">Confirm</button> -->
-        </footer>
       </div>
     </main>
   </body>
