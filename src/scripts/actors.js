@@ -1,10 +1,12 @@
 import { fromCallback } from "xstate";
 import { App } from "./App";
+import { setActiveNavItem } from "./helpers";
 
 export const loadFirstStep = fromCallback(({ sendBack }) => {
   const wrapper = App.mainWrapper();
   const clone = App.personalInfoForm().content.cloneNode(true);
   wrapper.replaceChildren(clone);
+  setActiveNavItem("step-one");
 
   const handler = (e) => {
     e.preventDefault();
@@ -35,6 +37,7 @@ export const loadSecondStep = fromCallback(({ sendBack }) => {
   const wrapper = App.mainWrapper();
   const clone = App.selectPlanForm().content.cloneNode(true);
   wrapper.replaceChildren(clone);
+  setActiveNavItem("step-two");
 
   const handler = (e) => {
     e.preventDefault();
@@ -62,6 +65,7 @@ export const loadThirdStep = fromCallback(({ sendBack }) => {
   const wrapper = App.mainWrapper();
   const clone = App.pickAddonsForm().content.cloneNode(true);
   wrapper.replaceChildren(clone);
+  setActiveNavItem("step-three");
 
   const handler = (e) => {
     e.preventDefault();
@@ -89,6 +93,7 @@ export const loadForthStep = fromCallback(({ sendBack }) => {
   const wrapper = App.mainWrapper();
   const clone = App.finishingUpPage().content.cloneNode(true);
   wrapper.replaceChildren(clone);
+  setActiveNavItem("step-four");
 
   const handler = (e) => {
     sendBack({

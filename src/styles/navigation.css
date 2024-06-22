@@ -17,6 +17,7 @@ nav {
     min-width: 270px;
     z-index: initial;
     height: auto;
+    min-height: 565px;
     position: relative;
     border-radius: 10px;
     background-image: url("./src/assets/images/bg-sidebar-desktop.svg");
