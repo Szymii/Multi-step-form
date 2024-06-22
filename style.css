@@ -2,6 +2,7 @@
 @import url("./src/styles/navigation.css");
 @import url("./src/styles/step.css");
 @import url("./src/styles/footer.css");
+@import url("./src/styles/switch.css");
 
 * {
   box-sizing: border-box;

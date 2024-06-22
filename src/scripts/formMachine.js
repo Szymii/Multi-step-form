@@ -17,8 +17,7 @@ export const formMachine = setup({
   },
 }).createMachine({
   id: "form-state",
-  // initial: "personalInfo",
-  initial: "plan",
+  initial: "personalInfo",
   context: {
     name: "",
     email: "",
@@ -55,10 +54,10 @@ export const formMachine = setup({
         },
         "plan.submitted": {
           target: "addons",
-          // actions: assign({
-          //   plan: ({ event }) => event.plan,
-          //   monthly: ({ event }) => event.monthly,
-          // }),
+          actions: assign({
+            plan: ({ event }) => event.plan,
+            monthly: ({ event }) => event.monthly,
+          }),
         },
       },
     },

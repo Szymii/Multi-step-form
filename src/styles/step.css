@@ -75,6 +75,8 @@ label {
 }
 
 .select-plan-form {
+  gap: 1.5rem;
+
   .input-wrapper {
     display: flex;
     flex-direction: column;
@@ -83,56 +85,75 @@ label {
     @media (min-width: 820px) {
       flex-direction: row;
     }
+
+    label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      cursor: pointer;
+
+      @media (min-width: 820px) {
+        flex-basis: 33%;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.8rem;
+      }
+
+      &:has(input:checked) {
+        background-color: var(--alabaster);
+        border-color: var(--purplish-blue);
+      }
+
+      &:hover {
+        border-color: var(--purplish-blue);
+      }
+
+      input {
+        display: none;
+      }
+
+      img {
+        height: 44px;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.2rem;
+      }
+
+      h3 {
+        margin: 0;
+      }
+
+      span {
+        color: var(--cool-gray);
+      }
+    }
   }
 
-  label {
+  .switch-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    background-color: var(--magnolia);
     padding: 1rem;
-    border: 1px solid var(--light-gray);
-    border-radius: 8px;
-    cursor: pointer;
+    justify-content: center;
+    font-weight: var(--font-medium);
+    color: var(--cool-gray);
 
-    @media (min-width: 820px) {
-      flex-basis: 33%;
-
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2.8rem;
+    &:has(input:checked) .yearly {
+      color: var(--marine-blue);
     }
 
-    &:has(input:checked) {
-      background-color: var(--alabaster);
-      border-color: var(--purplish-blue);
-    }
-
-    &:hover {
-      border-color: var(--purplish-blue);
-    }
-
-    input {
-      display: none;
-    }
-
-    img {
-      height: 44px;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 0.2rem;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    span {
-      color: var(--cool-gray);
+    &:not(:has(input:checked)) .monthly {
+      color: var(--marine-blue);
     }
   }
 }

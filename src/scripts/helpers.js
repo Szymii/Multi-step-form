@@ -25,3 +25,17 @@ export const loadSection = (template, navId) => {
   wrapper.replaceChildren(clone);
   setActiveNavItem(navId);
 };
+
+/**
+ * @param {HTMLFormElement} form
+ */
+export const getFormData = (form) => {
+  const formData = new FormData(form);
+  const formDataObj = {};
+
+  for (const [key, value] of formData) {
+    formDataObj[key] = value;
+  }
+
+  return formDataObj;
+};

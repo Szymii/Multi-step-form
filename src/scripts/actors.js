@@ -1,28 +1,23 @@
 import { fromCallback } from "xstate";
-import { App } from "./App";
-import { loadSection } from "./helpers";
+import { App, Plans } from "./App";
+import { getFormData, loadSection } from "./helpers";
 
 export const loadFirstStep = fromCallback(({ sendBack }) => {
   loadSection(App.personalInfoForm(), "step-one");
+  const form = App.mainWrapper().querySelector("form");
 
   const handler = (e) => {
     e.preventDefault();
-    const formData = new FormData(form);
-    const formDataObj = {};
-
-    for (const [key, value] of formData) {
-      formDataObj[key] = value;
-    }
+    const formData = getFormData(form);
 
     sendBack({
       type: "info.submitted",
-      name: formDataObj.name,
-      email: formDataObj.email,
-      phone: formDataObj.phone,
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
     });
   };
 
-  const form = App.mainWrapper().querySelector("form");
   form.addEventListener("submit", handler);
 
   return () => {
@@ -32,12 +27,16 @@ export const loadFirstStep = fromCallback(({ sendBack }) => {
 
 export const loadSecondStep = fromCallback(({ sendBack }) => {
   loadSection(App.selectPlanForm(), "step-two");
+  const form = App.mainWrapper().querySelector("form");
 
   const submitForm = (e) => {
     e.preventDefault();
+    const formData = getFormData(form);
 
     sendBack({
       type: "plan.submitted",
+      plan: Plans[formData.plan],
+      monthly: !formData?.monthly,
     });
   };
 
@@ -47,7 +46,6 @@ export const loadSecondStep = fromCallback(({ sendBack }) => {
     });
   };
 
-  const form = App.mainWrapper().querySelector("form");
   form.addEventListener("submit", submitForm);
 
   const goBackBtn = App.goBackBtn();
