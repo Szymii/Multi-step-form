@@ -19,7 +19,7 @@ main {
   max-width: 940px;
   margin-inline: auto;
 
-  @media (min-width: 768px) {
+  @media (min-width: 820px) {
     border-radius: 15px;
     margin-top: 100px;
     background-color: var(--white);
@@ -32,7 +32,7 @@ main {
   flex-grow: 1;
   padding: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 820px) {
     padding: 16px 80px;
   }
 }

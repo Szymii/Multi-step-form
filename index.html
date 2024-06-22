@@ -95,6 +95,43 @@
             You have the option of monthly or yearly billing.
           </p>
           <form class="select-plan-form form">
+            <div class="input-wrapper">
+              <label>
+                <input
+                  type="radio"
+                  id="arcade"
+                  name="plan"
+                  value="arcade"
+                  checked
+                />
+                <img src="./src/assets/images/icon-arcade.svg" />
+                <div class="content">
+                  <h3>Arcade</h3>
+                  <span>$9/mo</span>
+                </div>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  id="advanced"
+                  name="plan"
+                  value="advanced"
+                />
+                <img src="./src/assets/images/icon-advanced.svg" />
+                <div class="content">
+                  <h3>Advanced</h3>
+                  <span>$12/mo</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" id="pro" name="plan" value="pro" />
+                <img src="./src/assets/images/icon-pro.svg" />
+                <div class="content">
+                  <h3>Pro</h3>
+                  <span>$15/mo</span>
+                </div>
+              </label>
+            </div>
             <div class="form-footer">
               <button class="go-back-btn">Go back</button>
               <button class="go-next-btn" type="submit">Next step</button>

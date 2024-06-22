@@ -13,7 +13,7 @@ nav {
   gap: 1rem;
   padding-top: 2rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 820px) {
     min-width: 270px;
     z-index: initial;
     height: auto;
@@ -58,7 +58,7 @@ nav {
   justify-content: center;
   gap: 2px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 820px) {
     display: flex;
   }
 }
