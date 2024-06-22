@@ -13,13 +13,13 @@
     position: relative;
     padding: 0;
     box-shadow: none;
+    margin-top: 80px;
   }
 
   & button {
     border: none;
     font-size: 0.9rem;
     padding: 12px 16px;
-    font-weight: var(--font-medium);
     border-radius: 5px;
     cursor: pointer;
 
@@ -35,14 +35,27 @@
   color: var(--cool-gray);
   margin-right: auto;
   background: transparent;
+  font-weight: var(--font-bold);
+
+  &:hover {
+    color: var(--marine-blue);
+  }
 }
 
 .go-next-btn {
   color: var(--white);
   background-color: var(--marine-blue);
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .confirm-btn {
   color: var(--white);
   background-color: var(--purplish-blue);
+
+  &:hover {
+    opacity: 0.8;
+  }
 }

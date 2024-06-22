@@ -1,27 +1,61 @@
 /**
  * @namespace App
- * @property {HTMLElement} nav
- * @property {HTMLElement} mainWrapper
- * @property {HTMLElement} goBackBtn
- * @property {HTMLElement} goNextBtn
- * @property {HTMLElement} confirmBtn
- * @property {HTMLFormElement} personalInfoForm
- * @property {HTMLFormElement} selectPlanForm
- * @property {HTMLFormElement} pickAddonsForm
- * @property {HTMLFormElement} finishingUpForm
+ * @property {Function} nav
+ * @property {Function} mainWrapper
+ * @property {Function} goBackBtn
+ * @property {Function} goNextBtn
+ * @property {Function} confirmBtn
+ * @property {Function} personalInfoForm
+ * @property {Function} selectPlanForm
+ * @property {Function} pickAddonsForm
+ * @property {Function} finishingUpForm
  */
 export const App = {
-  nav: document.querySelector("nav"),
-  mainWrapper: document.querySelector(".main-wrapper"),
-  goBackBtn: document.querySelector(".go-back-btn"),
-  goNextBtn: document.querySelector(".go-next-btn"),
-  confirmBtn: document.querySelector(".confirm-btn"),
-  personalInfoForm: document.querySelector("#personal-info-form"),
-  selectPlanForm: document.querySelector("#select-plan-form"),
-  pickAddonsForm: document.querySelector("#pick-addons-form"),
-  finishingUpForm: document.querySelector("#finishing-up-form"),
-};
+  /**
+   * @returns {HTMLElement}
+   */
+  nav: () => document.querySelector("nav"),
 
+  /**
+   * @returns {HTMLElement}
+   */
+  mainWrapper: () => document.querySelector(".main-wrapper"),
+
+  /**
+   * @returns {HTMLButtonElement}
+   */
+  goBackBtn: () => document.querySelector(".go-back-btn"),
+
+  /**
+   * @returns {HTMLButtonElement}
+   */
+  goNextBtn: () => document.querySelector(".go-next-btn"),
+
+  /**
+   * @returns {HTMLButtonElement}
+   */
+  confirmBtn: () => document.querySelector(".confirm-btn"),
+
+  /**
+   * @returns {HTMLFormElement}
+   */
+  personalInfoForm: () => document.querySelector("#personal-info-form"),
+
+  /**
+   * @returns {HTMLFormElement}
+   */
+  selectPlanForm: () => document.querySelector("#select-plan-form"),
+
+  /**
+   * @returns {HTMLFormElement}
+   */
+  pickAddonsForm: () => document.querySelector("#pick-addons-form"),
+
+  /**
+   * @returns {HTMLFormElement}
+   */
+  finishingUpPage: () => document.querySelector("#finishing-up"),
+};
 /**
  * @namespace Plans
  * @property {Object} arcade

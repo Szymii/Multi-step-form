@@ -6,9 +6,3 @@ formActor.subscribe((snapshot) => {
 });
 
 formActor.start();
-// formActor.send({
-//   type: "info.submitted",
-// });
-// formActor.send({
-//   type: "plan.submitted",
-// });

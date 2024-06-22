@@ -9,6 +9,7 @@ section {
   @media (min-width: 768px) {
     border-radius: 25px;
     margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
     box-shadow: none;
   }
@@ -42,7 +43,7 @@ label {
     border: 1px solid;
     border-color: var(--light-gray);
     border-radius: 5px;
-    max-width: 450px;
+    max-width: 478px;
     color: var(--marine-blue);
     font-weight: var(--font-bold);
 

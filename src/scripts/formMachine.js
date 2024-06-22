@@ -1,28 +1,18 @@
-import { assign, createActor, fromCallback, setup } from "xstate";
-import { App, Plans } from "./App";
+import { assign, createActor, setup } from "xstate";
+import { Plans } from "./App";
+import {
+  loadFirstStep,
+  loadSecondStep,
+  loadThirdStep,
+  loadForthStep,
+} from "./actors";
 
 export const formMachine = setup({
   actors: {
-    loadStep: fromCallback(({ input, self }) => {
-      const clone = input.template.content.cloneNode(true);
-      input.loadTo.replaceChildren(clone);
-
-      const handler = (e) => {
-        e.preventDefault();
-        const formData = new FormData(form);
-
-        for (const [key, value] of formData) {
-          console.log({ key, value });
-        }
-      };
-
-      const form = input.loadTo.querySelector("form");
-      form.addEventListener("submit", handler);
-
-      return () => {
-        form.removeEventListener("submit", handler);
-      };
-    }),
+    loadFirstStep,
+    loadSecondStep,
+    loadThirdStep,
+    loadForthStep,
   },
 }).createMachine({
   id: "form-state",
@@ -39,11 +29,7 @@ export const formMachine = setup({
     personalInfo: {
       invoke: {
         id: "firstStep",
-        src: "loadStep",
-        input: {
-          template: App.personalInfoForm,
-          loadTo: App.mainWrapper,
-        },
+        src: "loadFirstStep",
       },
       on: {
         "info.submitted": {
@@ -57,27 +43,39 @@ export const formMachine = setup({
       },
     },
     plan: {
+      invoke: {
+        id: "secondStep",
+        src: "loadSecondStep",
+      },
       on: {
         "plan.submitted": {
           target: "addons",
-          actions: assign({
-            plan: ({ event }) => event.plan,
-            monthly: ({ event }) => event.monthly,
-          }),
+          // actions: assign({
+          //   plan: ({ event }) => event.plan,
+          //   monthly: ({ event }) => event.monthly,
+          // }),
         },
       },
     },
     addons: {
+      invoke: {
+        id: "secondThird",
+        src: "loadThirdStep",
+      },
       on: {
         "addons.submitted": {
           target: "finish",
-          actions: assign({
-            addons: ({ event }) => event.addons,
-          }),
+          // actions: assign({
+          //   addons: ({ event }) => event.addons,
+          // }),
         },
       },
     },
     finish: {
+      invoke: {
+        id: "secondForth",
+        src: "loadForthStep",
+      },
       on: {
         "finish.submitted": {
           target: "thanks",
