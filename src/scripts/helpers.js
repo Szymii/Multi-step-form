@@ -33,8 +33,8 @@ export const getFormData = (form) => {
   const formData = new FormData(form);
   const formDataObj = {};
 
-  for (const [key, value] of formData) {
-    formDataObj[key] = value;
+  for (const [key] of formData) {
+    formDataObj[key] = formData.getAll(key);
   }
 
   return formDataObj;

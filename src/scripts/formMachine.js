@@ -17,7 +17,8 @@ export const formMachine = setup({
   },
 }).createMachine({
   id: "form-state",
-  initial: "personalInfo",
+  // initial: "personalInfo",
+  initial: "addons",
   context: {
     name: "",
     email: "",
@@ -72,9 +73,9 @@ export const formMachine = setup({
         },
         "addons.submitted": {
           target: "finish",
-          // actions: assign({
-          //   addons: ({ event }) => event.addons,
-          // }),
+          actions: assign({
+            addons: ({ event }) => event.addons,
+          }),
         },
       },
     },

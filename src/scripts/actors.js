@@ -1,5 +1,5 @@
 import { fromCallback } from "xstate";
-import { App, Plans } from "./App";
+import { Addons, App, Plans } from "./App";
 import { getFormData, loadSection } from "./helpers";
 
 export const loadFirstStep = fromCallback(({ sendBack }) => {
@@ -62,9 +62,11 @@ export const loadThirdStep = fromCallback(({ sendBack }) => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    const formData = getFormData(form);
 
     sendBack({
       type: "addons.submitted",
+      addons: formData.addons.map((name) => Addons[name]),
     });
   };
 
