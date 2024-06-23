@@ -17,8 +17,8 @@ export const formMachine = setup({
   },
 }).createMachine({
   id: "form-state",
-  // initial: "personalInfo",
-  initial: "addons",
+  initial: "personalInfo",
+  initial: "finish",
   context: {
     name: "",
     email: "",
