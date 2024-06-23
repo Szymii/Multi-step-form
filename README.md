@@ -10,7 +10,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 
 ### Links
 
-- Live Site URL: [Add live site URL here]([https://todo.com](https://szymii.github.io/Multi-step-form/))
+- Live Site URL: [Add live site URL here](https://szymii.github.io/Multi-step-form/)
 
 ## My process
 
