@@ -213,7 +213,7 @@ label {
       }
 
       &:before {
-        content: url("../assets/images/icon-checkmark.svg");
+        content: url("/images/icon-checkmark.svg");
         font-size: 15px;
         width: 20px;
         height: 20px;

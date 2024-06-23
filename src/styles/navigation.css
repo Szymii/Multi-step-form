@@ -4,7 +4,7 @@ nav {
   left: 0;
   right: 0;
   height: 174px;
-  background-image: url("./src/assets/images/bg-sidebar-mobile.svg");
+  background-image: url("/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
@@ -20,7 +20,7 @@ nav {
     min-height: 565px;
     position: relative;
     border-radius: 10px;
-    background-image: url("./src/assets/images/bg-sidebar-desktop.svg");
+    background-image: url("/images/bg-sidebar-desktop.svg");
     padding: 32px;
     flex-direction: column;
     justify-content: flex-start;
