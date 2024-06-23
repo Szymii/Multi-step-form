@@ -1,7 +1,12 @@
 import { fromCallback } from "xstate";
 import { Addons, App, Plans } from "./App";
 import { getFormData, loadSection } from "./helpers";
-import { fillFirstSection, fillSecondSection, fillThirdPlan } from "./fillers";
+import {
+  fillFirstSection,
+  fillSecondSection,
+  fillSummary,
+  fillThirdSection,
+} from "./fillers";
 
 export const loadFirstStep = fromCallback(({ sendBack, input }) => {
   loadSection(App.personalInfoForm(), "step-one");
@@ -64,7 +69,7 @@ export const loadSecondStep = fromCallback(({ sendBack, input }) => {
 
 export const loadThirdStep = fromCallback(({ sendBack, input }) => {
   loadSection(App.pickAddonsForm(), "step-three");
-  fillThirdPlan(input);
+  fillThirdSection(input);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -94,8 +99,9 @@ export const loadThirdStep = fromCallback(({ sendBack, input }) => {
   };
 });
 
-export const loadForthStep = fromCallback(({ sendBack }) => {
+export const loadForthStep = fromCallback(({ sendBack, input }) => {
   loadSection(App.finishingUpPage(), "step-four");
+  fillSummary(input);
 
   const handler = (e) => {
     sendBack({

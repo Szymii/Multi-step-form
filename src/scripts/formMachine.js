@@ -17,8 +17,7 @@ export const formMachine = setup({
   },
 }).createMachine({
   id: "form-state",
-  // initial: "personalInfo",
-  initial: "addons",
+  initial: "personalInfo",
   context: {
     name: "",
     email: "",
@@ -96,6 +95,11 @@ export const formMachine = setup({
       invoke: {
         id: "secondForth",
         src: "loadForthStep",
+        input: ({ context }) => ({
+          plan: context.plan,
+          yearly: context.yearly,
+          addons: context.addons,
+        }),
       },
       on: {
         back: {

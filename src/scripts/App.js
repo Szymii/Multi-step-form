@@ -103,15 +103,18 @@ export const Plans = {
  */
 export const Addons = {
   service: {
-    name: "service",
+    id: "service",
+    name: "Online services",
     value: 1,
   },
   storage: {
-    name: "storage",
+    id: "storage",
+    name: "Larger storage",
     value: 2,
   },
   profile: {
-    name: "profile",
+    id: "profile",
+    name: "Customizable profile",
     value: 2,
   },
 };

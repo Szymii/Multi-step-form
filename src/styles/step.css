@@ -246,7 +246,8 @@ label {
     color: var(--marine-blue);
     margin: 0;
 
-    .period {
+    span {
+      text-transform: capitalize;
       color: var(--marine-blue);
     }
   }
