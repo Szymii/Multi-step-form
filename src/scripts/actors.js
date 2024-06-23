@@ -1,10 +1,13 @@
 import { fromCallback } from "xstate";
 import { Addons, App, Plans } from "./App";
 import { getFormData, loadSection } from "./helpers";
+import { fillFirstSection, fillSecondSection, fillThirdPlan } from "./fillers";
 
-export const loadFirstStep = fromCallback(({ sendBack }) => {
+export const loadFirstStep = fromCallback(({ sendBack, input }) => {
   loadSection(App.personalInfoForm(), "step-one");
   const form = App.mainWrapper().querySelector("form");
+
+  fillFirstSection(input);
 
   const handler = (e) => {
     e.preventDefault();
@@ -25,9 +28,11 @@ export const loadFirstStep = fromCallback(({ sendBack }) => {
   };
 });
 
-export const loadSecondStep = fromCallback(({ sendBack }) => {
+export const loadSecondStep = fromCallback(({ sendBack, input }) => {
   loadSection(App.selectPlanForm(), "step-two");
   const form = App.mainWrapper().querySelector("form");
+
+  fillSecondSection(input);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -36,7 +41,7 @@ export const loadSecondStep = fromCallback(({ sendBack }) => {
     sendBack({
       type: "plan.submitted",
       plan: Plans[formData.plan],
-      monthly: !formData?.monthly,
+      yearly: !!formData?.yearly,
     });
   };
 
@@ -57,8 +62,9 @@ export const loadSecondStep = fromCallback(({ sendBack }) => {
   };
 });
 
-export const loadThirdStep = fromCallback(({ sendBack }) => {
+export const loadThirdStep = fromCallback(({ sendBack, input }) => {
   loadSection(App.pickAddonsForm(), "step-three");
+  fillThirdPlan(input);
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -66,7 +72,7 @@ export const loadThirdStep = fromCallback(({ sendBack }) => {
 
     sendBack({
       type: "addons.submitted",
-      addons: formData.addons.map((name) => Addons[name]),
+      addons: formData.addons?.map((name) => Addons[name]) || [],
     });
   };
 

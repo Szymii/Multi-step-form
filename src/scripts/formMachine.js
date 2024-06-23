@@ -17,14 +17,14 @@ export const formMachine = setup({
   },
 }).createMachine({
   id: "form-state",
-  initial: "personalInfo",
-  initial: "finish",
+  // initial: "personalInfo",
+  initial: "addons",
   context: {
     name: "",
     email: "",
     phone: "",
     plan: Plans.arcade,
-    monthly: true,
+    yearly: false,
     addons: [],
   },
   states: {
@@ -32,6 +32,11 @@ export const formMachine = setup({
       invoke: {
         id: "firstStep",
         src: "loadFirstStep",
+        input: ({ context }) => ({
+          name: context.name,
+          email: context.email,
+          phone: context.phone,
+        }),
       },
       on: {
         "info.submitted": {
@@ -48,6 +53,10 @@ export const formMachine = setup({
       invoke: {
         id: "secondStep",
         src: "loadSecondStep",
+        input: ({ context }) => ({
+          plan: context.plan.name,
+          yearly: context.yearly,
+        }),
       },
       on: {
         back: {
@@ -57,7 +66,7 @@ export const formMachine = setup({
           target: "addons",
           actions: assign({
             plan: ({ event }) => event.plan,
-            monthly: ({ event }) => event.monthly,
+            yearly: ({ event }) => event.yearly,
           }),
         },
       },
@@ -66,6 +75,10 @@ export const formMachine = setup({
       invoke: {
         id: "secondThird",
         src: "loadThirdStep",
+        input: ({ context }) => ({
+          yearly: context.yearly,
+          addons: context.addons,
+        }),
       },
       on: {
         back: {

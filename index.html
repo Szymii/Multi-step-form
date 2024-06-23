@@ -97,17 +97,11 @@
           <form class="select-plan-form form">
             <div class="input-wrapper">
               <label>
-                <input
-                  type="radio"
-                  id="arcade"
-                  name="plan"
-                  value="arcade"
-                  checked
-                />
+                <input type="radio" id="arcade" name="plan" value="arcade" />
                 <img src="./src/assets/images/icon-arcade.svg" />
                 <div class="content">
                   <h3>Arcade</h3>
-                  <span>$9/mo</span>
+                  <span class="price" id="price-arcade"></span>
                 </div>
               </label>
               <label>
@@ -120,7 +114,7 @@
                 <img src="./src/assets/images/icon-advanced.svg" />
                 <div class="content">
                   <h3>Advanced</h3>
-                  <span>$12/mo</span>
+                  <span class="price" id="price-advanced"></span>
                 </div>
               </label>
               <label>
@@ -128,14 +122,14 @@
                 <img src="./src/assets/images/icon-pro.svg" />
                 <div class="content">
                   <h3>Pro</h3>
-                  <span>$15/mo</span>
+                  <span class="price" id="price-pro"></span>
                 </div>
               </label>
             </div>
             <label class="switch-wrapper">
               <span class="monthly">Monthly</span>
               <div class="switch">
-                <input type="checkbox" name="monthly" />
+                <input type="checkbox" name="yearly" />
                 <span class="slider round"></span>
               </div>
               <span class="yearly">Yearly</span>
@@ -156,12 +150,12 @@
           <form class="pick-addons-form form">
             <div class="input-wrapper">
               <label>
-                <input type="checkbox" name="addons" value="service" checked />
+                <input type="checkbox" name="addons" value="service" />
                 <div>
                   <h3>Online service</h3>
                   <span>Access to multiplayer games</span>
                 </div>
-                <span class="price">+$1/mo</span>
+                <span class="price"></span>
               </label>
               <label>
                 <input type="checkbox" name="addons" value="storage" />
@@ -169,7 +163,7 @@
                   <h3>Larger storage</h3>
                   <span>Extra 1TB of cloud storage</span>
                 </div>
-                <span class="price">+$2/mo</span>
+                <span class="price"></span>
               </label>
               <label>
                 <input type="checkbox" name="addons" value="profile" />
@@ -177,7 +171,7 @@
                   <h3>Customizable profile</h3>
                   <span>Custom theme on your profile</span>
                 </div>
-                <span class="price">+$2/mo</span>
+                <span class="price"></span>
               </label>
             </div>
             <div class="form-footer">
