@@ -24,3 +24,11 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 ### What I learned
 
 The aim of this project was twofold: to refresh my skills in pure CSS and to delve into the capabilities of XState
+
+### pushing to gh-pages
+
+```bash
+git add dist -f
+git commit
+subtree push --prefix dist origin gh-pages
+```
