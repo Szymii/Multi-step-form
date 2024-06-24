@@ -19,6 +19,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 - HTML5 - (no frameworks)
 - CSS - (no tailwind / SCSS)
 - Mobile-first workflow
+- E2E test with [Playwright](https://playwright.dev/)
 - [XState](https://xstate.js.org/) - state management and orchestration solution for JavaScript and TypeScript apps
 
 ### What I learned
