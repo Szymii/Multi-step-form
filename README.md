@@ -6,10 +6,6 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 
 On branch `electron` you can find electron version
 
-###
-
-On branch `electron` you can find electron version
-
 ### Screenshot
 
 ![](./public/ss.png)
